@@ -1,10 +1,10 @@
 %define name	tint2
-%define version	snapshot
-%define release	69
+%define version	69
+%define release	%mkrel 1
 
 Name:		%{name}
 Summary:	Tint2 - A Lightweight Panel and Taskbar
-Version:	%{version}
+Version:	snapshot-%{version}
 Release:	%{release}
 License: 	GPL2
 Vendor:		Mandriva
@@ -17,7 +17,7 @@ BuildRequires:	libcairo-devel
 BuildRequires:	libxorg-x11-devel
 BuildRequires:	libxinerama1-devel
 BuildRequires:	libimlib2-devel
-Source0:	tint2-%{release}.tar.bz2
+Source0:	tint2-%{version}.tar.bz2
 Patch0:		set_net_wm_icon_geometry.patch
 
 %description
@@ -27,7 +27,7 @@ goal is to keep a clean and unintrusive look with code
 lightweight and compliance with freedesktop specifications.
 
 %prep
-%setup -q -n %{name}-%{release}
+%setup -q -n %{name}-%{version}
 %patch0 -p1
 
 %build
