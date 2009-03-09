@@ -1,6 +1,6 @@
 %define name	tint2
 %define version	snapshot
-%define release	r69
+%define release	69
 
 Name:		%{name}
 Summary:	Tint2 - A Lightweight Panel and Taskbar
@@ -9,7 +9,7 @@ Release:	%{release}
 License: 	GPL2
 Vendor:		Mandriva
 Packager:	Caio Begotti <caio@mandriva.com>
-Group:		Desktop
+Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
