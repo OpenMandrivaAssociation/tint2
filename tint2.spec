@@ -12,10 +12,10 @@ Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{revision}-buildroot
-BuildRequires:	libcairo-devel
-BuildRequires:	libxorg-x11-devel
-BuildRequires:	libxinerama1-devel
-BuildRequires:	libimlib2-devel
+BuildRequires:	cairo-devel
+BuildRequires:	libx11-devel
+BuildRequires:	libxinerama-devel
+BuildRequires:	imlib2-devel
 Source0:	tint2-%{ver}-%{revision}.tar.bz2
 Patch0:		set_net_wm_icon_geometry.patch
 Patch1:		tint2_makefilenostrip.patch
