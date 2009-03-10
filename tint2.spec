@@ -1,24 +1,24 @@
-%define name	tint2
-%define version	69
-%define release	%mkrel 1
+%define name		tint2
+%define revision	svn69
+%define ver		0.6.0
+%define rel		%mkrel 1
 
 Name:		%{name}
 Summary:	Tint2 - A Lightweight Panel and Taskbar
-Version:	snapshot-%{version}
-Release:	%{release}
+Version:	%{ver}
+Release:	%{revision}.%{rel}
 License: 	GPL2
-Vendor:		Mandriva
-Packager:	Caio Begotti <caio@mandriva.com>
 Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
 
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{revision}-buildroot
 BuildRequires:	libcairo-devel
 BuildRequires:	libxorg-x11-devel
 BuildRequires:	libxinerama1-devel
 BuildRequires:	libimlib2-devel
-Source0:	tint2-%{version}.tar.bz2
+Source0:	tint2-%{ver}-%{revision}.tar.bz2
 Patch0:		set_net_wm_icon_geometry.patch
+Patch1:		tint2_makefilenostrip.patch
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
@@ -27,8 +27,9 @@ goal is to keep a clean and unintrusive look with code
 lightweight and compliance with freedesktop specifications.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}-%{revision}
 %patch0 -p1
+%patch1 -p1
 
 %build
 cd src/
@@ -45,6 +46,6 @@ cd src/
 %files
 %defattr (-,root,root)
 %doc AUTHORS COPYING README ChangeLog tintrc*
-%{_sysconfdir}/xdg/tint2/tint2rc
-%{_bindir}/*
+%config(noreplace) %{_sysconfdir}/xdg/tint2/tint2rc
+%{_bindir}/tint2
 %{_mandir}/man1/*
