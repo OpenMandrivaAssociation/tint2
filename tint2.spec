@@ -18,7 +18,7 @@ BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
 Source0:	tint2-%{ver}-%{revision}.tar.bz2
 Patch0:		set_net_wm_icon_geometry.patch
-Patch1:		tint2_makefilenostrip.patch
+Patch1:		tint2_makefilefixes.patch
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
