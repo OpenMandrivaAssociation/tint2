@@ -17,6 +17,8 @@ BuildRequires:	libx11-devel
 BuildRequires:	pango-devel
 BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
+BuildRequires:	glib2-devel
+BuildRequires:	libxrandr-devel
 Source0:	tint2-%{ver}-%{revision}.tar.bz2
 Patch0:		set_net_wm_icon_geometry.patch
 Patch1:		tint2_makefilefixes.patch
