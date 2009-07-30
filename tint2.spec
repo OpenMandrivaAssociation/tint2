@@ -1,27 +1,27 @@
 %define name		tint2
-%define revision	svn69
-%define ver		0.6.0
+#define revision	svn69
+%define ver		0.7.1
 %define rel		%mkrel 1
 
 Name:		%{name}
 Summary:	Tint2 - A Lightweight Panel and Taskbar
 Version:	%{ver}
-Release:	%{revision}.%{rel}
-License: 	GPL2
+Release:	%{rel}
+License: 	GPLv2
 Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
 
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{revision}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	cairo-devel
-BuildRequires:	libx11-devel
+BuildRequires:	libx11_6-devel
 BuildRequires:	pango-devel
 BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
 BuildRequires:	glib2-devel
 BuildRequires:	libxrandr-devel
-Source0:	tint2-%{ver}-%{revision}.tar.bz2
-Patch0:		set_net_wm_icon_geometry.patch
-Patch1:		tint2_makefilefixes.patch
+Source0:	tint2-%{ver}.tar.gz
+#Patch0:		set_net_wm_icon_geometry.patch
+#Patch1:		tint2_makefilefixes.patch
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
@@ -30,21 +30,20 @@ goal is to keep a clean and unintrusive look with code
 lightweight and compliance with freedesktop specifications.
 
 %prep
-%setup -q -n %{name}-%{version}-%{revision}
-%patch0 -p1
-%patch1 -p1
+%setup -q
+#%patch0 -p1
+#%patch1 -p1
 
 %build
-cd src/
+%configure
 %make
 
 %install
-cd src/
-%makeinstall_std
+rm -rf $RPM_BUILD_ROOT
+%makeinstall
 
 %clean
-cd src/
-%make clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr (-,root,root)
