@@ -13,7 +13,7 @@ Url:		http://code.google.com/p/tint2/
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	cairo-devel
-BuildRequires:	libx11_6-devel
+BuildRequires:	libx11-devel
 BuildRequires:	pango-devel
 BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
