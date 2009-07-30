@@ -21,7 +21,6 @@ BuildRequires:	glib2-devel
 BuildRequires:	libxrandr-devel
 Source0:	tint2-%{ver}.tar.gz
 #Patch0:		set_net_wm_icon_geometry.patch
-#Patch1:		tint2_makefilefixes.patch
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
@@ -32,7 +31,6 @@ lightweight and compliance with freedesktop specifications.
 %prep
 %setup -q
 #%patch0 -p1
-#%patch1 -p1
 
 %build
 %configure
