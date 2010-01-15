@@ -1,6 +1,6 @@
 %define name		tint2
 #define revision	svn69
-%define ver		0.7.1
+%define ver		0.8
 %define rel		%mkrel 1
 
 Name:		%{name}
@@ -33,19 +33,20 @@ lightweight and compliance with freedesktop specifications.
 #%patch0 -p1
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
-%doc AUTHORS COPYING README ChangeLog tintrc*
+%doc AUTHORS COPYING README ChangeLog 
 %config(noreplace) %{_sysconfdir}/xdg/tint2/tint2rc
 %{_bindir}/tint2
+%{_datadir}/tint2/*.png
 %{_mandir}/man1/*
