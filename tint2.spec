@@ -17,7 +17,7 @@ BuildRequires:	pango-devel
 BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
 BuildRequires:	glib2-devel
-BuildRequires:	libxrandr-devel
+BuildRequires:	libxrandr-devel, libxcomposite-devel, libxdamage-devel
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
