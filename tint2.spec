@@ -1,16 +1,15 @@
 %define name		tint2
-#define revision	svn69
-%define ver		0.8
-%define rel		%mkrel 1
+%define version		0.9
+%define release		%mkrel 1
 
-Name:		%{name}
 Summary:	Tint2 - A Lightweight Panel and Taskbar
-Version:	%{ver}
-Release:	%{rel}
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
 License: 	GPLv2
 Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
-
+Source0:	http://tint2.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	cairo-devel
 BuildRequires:	libx11-devel
@@ -19,8 +18,6 @@ BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
 BuildRequires:	glib2-devel
 BuildRequires:	libxrandr-devel
-Source0:	tint2-%{ver}.tar.gz
-#Patch0:		set_net_wm_icon_geometry.patch
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
@@ -30,7 +27,6 @@ lightweight and compliance with freedesktop specifications.
 
 %prep
 %setup -q
-#%patch0 -p1
 
 %build
 %configure2_5x
