@@ -1,5 +1,5 @@
 %define name		tint2
-%define version		0.9
+%define version		0.11
 %define release		%mkrel 1
 
 Summary:	Tint2 - A Lightweight Panel and Taskbar
@@ -9,8 +9,9 @@ Release:	%{release}
 License: 	GPLv2
 Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
-Source0:	http://tint2.googlecode.com/files/%{name}-%{version}.tar.gz
+Source0:	http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRequires:	cmake
 BuildRequires:	cairo-devel
 BuildRequires:	libx11-devel
 BuildRequires:	pango-devel
@@ -29,20 +30,22 @@ lightweight and compliance with freedesktop specifications.
 %setup -q
 
 %build
-%configure2_5x
+%cmake
 %make
 
 %install
-rm -rf %{buildroot}
-%makeinstall
+%__rm -rf %{buildroot}
+%makeinstall_std -C build
 
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
 %doc AUTHORS COPYING README ChangeLog 
 %config(noreplace) %{_sysconfdir}/xdg/tint2/tint2rc
-%{_bindir}/tint2
+%{_bindir}/tint*
 %{_datadir}/tint2/*.png
+%{_datadir}/applications/tint2*.desktop
+%{_datadir}/pixmaps/tint2*
 %{_mandir}/man1/*
