@@ -11,6 +11,7 @@ Group:		Graphical desktop/Other
 Url:		http://code.google.com/p/tint2/
 Source0:	http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+Requires:	libgtk+-x11-2.0
 BuildRequires:	cmake
 BuildRequires:	cairo-devel
 BuildRequires:	libx11-devel
