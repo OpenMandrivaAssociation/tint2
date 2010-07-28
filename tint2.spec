@@ -14,6 +14,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	cmake
 BuildRequires:	cairo-devel
 BuildRequires:	libx11-devel
+BuildRequires:  libgtk+-x11-2.0
 BuildRequires:	pango-devel
 BuildRequires:	libxinerama-devel
 BuildRequires:	imlib2-devel
