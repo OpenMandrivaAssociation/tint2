@@ -1,6 +1,6 @@
 %define name		tint2
 %define version		0.11
-%define release		%mkrel 1
+%define release		%mkrel 2
 
 Summary:	Tint2 - A Lightweight Panel and Taskbar
 Name:		%{name}
