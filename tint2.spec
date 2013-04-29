@@ -1,11 +1,7 @@
-%define name tint2
-%define version 0.11
-%define release %mkrel 2
-
 Summary: Tint2 - A Lightweight Panel and Taskbar
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name:    tint2
+Version: 0.11
+Release: 3
 License: GPLv2
 Group: Graphical desktop/Other
 Url: http://code.google.com/p/tint2/
@@ -13,7 +9,7 @@ Source0: http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: pkgconfig(cairo)
 BuildRequires: pkgconfig(x11)
-BuildRequires: libgtk+2.0-devel
+BuildRequires: pkgconfig(gtk+2.0)
 BuildRequires: pango-devel
 BuildRequires: pkgconfig(pangoxft)
 BuildRequires: pkgconfig(xinerama)
