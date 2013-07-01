@@ -1,4 +1,4 @@
-Summary: Tint2 - A Lightweight Panel and Taskbar
+Summary: - A Lightweight Panel and Taskbar
 Name:    tint2
 Version: 0.11
 Release: 3
