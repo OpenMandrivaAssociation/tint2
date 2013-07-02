@@ -9,7 +9,7 @@ Source0: http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: pkgconfig(cairo)
 BuildRequires: pkgconfig(x11)
-BuildRequires: pkgconfig(gtk+2.0)
+BuildRequires: pkgconfig(gtk+-2.0)
 BuildRequires: pango-devel
 BuildRequires: pkgconfig(pangoxft)
 BuildRequires: pkgconfig(xinerama)
