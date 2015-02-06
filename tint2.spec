@@ -1,7 +1,7 @@
 Summary: A Lightweight Panel and Taskbar
 Name:    tint2
 Version: 0.11
-Release: 4
+Release: 5
 License: GPLv2
 Group: Graphical desktop/Other
 Url: http://code.google.com/p/tint2/
