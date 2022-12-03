@@ -1,7 +1,7 @@
 Summary: A Lightweight Panel and Taskbar
 Name:    tint2
-Version: 0.11
-Release: 5
+Version: 17.0.2
+Release: 1
 License: GPLv2
 Group: Graphical desktop/Other
 Url: http://code.google.com/p/tint2/
@@ -9,13 +9,17 @@ Source0: http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: pkgconfig(cairo)
 BuildRequires: pkgconfig(x11)
-BuildRequires: pkgconfig(gtk+-2.0)
-BuildRequires: pango-devel
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(pango)
 BuildRequires: pkgconfig(pangoxft)
 BuildRequires: pkgconfig(xinerama)
-BuildRequires: imlib2-devel
+BuildRequires: pkgconfig(imlib2)
 BuildRequires: pkgconfig(glib-2.0)
-BuildRequires: pkgconfig(xrandr), libxcomposite-devel, libxdamage-devel
+BuildRequires: pkgconfig(xrandr)
+BuildRequires: pkgconfig(xcomposite)
+BuildRequires: pkgconfig(xdamage)
+BuildRequires: pkgconfig(librsvg-2.0)
+BuildRequires: pkgconfig(libstartup-notification-1.0)
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
@@ -28,16 +32,24 @@ lightweight and compliance with freedesktop specifications.
 
 %build
 %cmake
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
-%files
-%doc AUTHORS COPYING README ChangeLog
+%find_lang tint2conf
+
+%files -f tint2conf.lang
+%doc AUTHORS COPYING README* ChangeLog
+%doc %{_datadir}/doc/tint2/html/
+%doc %{_datadir}/doc/tint2/tint2.md
 %config(noreplace) %{_sysconfdir}/xdg/tint2/tint2rc
 %{_bindir}/tint*
 %{_datadir}/tint2/*.png
+%{_datadir}/icons/hicolor/scalable/apps/tint2.svg
+%{_datadir}/icons/hicolor/scalable/apps/tint2conf.svg
 %{_datadir}/applications/tint2*.desktop
-%{_datadir}/pixmaps/tint2*
+%{_datadir}/tint2/horizontal*
+%{_datadir}/tint2/vertical*
+%{_datadir}/mime/packages/tint2conf.xml
 %{_mandir}/man1/* 
