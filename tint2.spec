@@ -36,10 +36,10 @@ lightweight and compliance with freedesktop specifications.
 %makeinstall_std -C build
 
 %files
-%doc AUTHORS COPYING README ChangeLog
+%doc AUTHORS COPYING README* ChangeLog
 %config(noreplace) %{_sysconfdir}/xdg/tint2/tint2rc
 %{_bindir}/tint*
 %{_datadir}/tint2/*.png
 %{_datadir}/applications/tint2*.desktop
-%{_datadir}/pixmaps/tint2*
+#{_datadir}/pixmaps/tint2*
 %{_mandir}/man1/* 
