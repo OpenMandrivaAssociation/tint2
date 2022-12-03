@@ -16,6 +16,8 @@ BuildRequires: pkgconfig(xinerama)
 BuildRequires: imlib2-devel
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(xrandr), libxcomposite-devel, libxdamage-devel
+BuildRequires: pkgconfig(librsvg-2.0)
+BuildRequires: pkgconfig(libstartup-notification-1.0)
 
 %description
 Tint2 is a simple panel and taskbar intentionally made for
