@@ -1,11 +1,13 @@
 Summary: A Lightweight Panel and Taskbar
 Name:    tint2
-Version: 17.0.2
+Version: 17.1.3
 Release: 1
 License: GPLv2
 Group: Graphical desktop/Other
 Url: http://code.google.com/p/tint2/
-Source0: http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
+#Source0: http://tint2.googlecode.com/files/%{name}-%{version}.tar.bz2
+# New source
+Source0:  https://www.opencode.net/nick87720z/tint2/-/archive/%{version}/tint2-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: pkgconfig(cairo)
 BuildRequires: pkgconfig(x11)
