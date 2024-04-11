@@ -9,6 +9,7 @@ Url: http://code.google.com/p/tint2/
 # New source
 Source0:  https://www.opencode.net/nick87720z/tint2/-/archive/%{version}/tint2-%{version}.tar.bz2
 BuildRequires: cmake
+BuildRequires: gettext
 BuildRequires: pkgconfig(cairo)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(gtk+-3.0)
